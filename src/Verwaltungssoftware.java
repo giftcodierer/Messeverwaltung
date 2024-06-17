@@ -102,10 +102,47 @@ public class Verwaltungssoftware {
      * @param forEducationalInstitution true if only areas bookable by educational institutions are needed, false otherwise
      * @return list of available fairground areas
      */
-    public List<Messeflaeche> getAvailableAreas(boolean forEducationalInstitution) {
+   /* public List<Messeflaeche> getAvailableAreas(boolean forEducationalInstitution) {
         return messeflaechen.stream()
                 .filter(area -> !area.isBooked() && (!forEducationalInstitution || area.isBookableByEducationalInstitution()))
                 .collect(Collectors.toList());
+    }*/
+
+    /**
+     * Retrieves all available fairground areas.
+     * @param forEducationalInstitution true if only areas bookable by educational institutions are needed, false otherwise
+     * @return list of available fairground areas
+     */
+    public List<Messeflaeche> getAvailableAreas(boolean forEducationalInstitution) {
+        List<Messeflaeche> availableAreas = messeflaechen.stream()
+                .filter(area -> !area.isBooked())
+                .collect(Collectors.toList());
+
+        if (forEducationalInstitution) {
+            availableAreas = availableAreas.stream()
+                    .filter(Messeflaeche::isBookableByEducationalInstitution)
+                    .collect(Collectors.toList());
+
+            if (availableAreas.isEmpty()) {
+                System.out.println("Keine freien Flächen für Bildungseinrichtungen verfügbar.");
+            } else {
+                System.out.println("Verfügbare Flächen für Bildungseinrichtungen:");
+                for (int i = 0; i < availableAreas.size(); i++) {
+                    Messeflaeche area = availableAreas.get(i);
+                    System.out.println("Index " + i + ": Größe " + area.getSize() + "m², Preis " + area.getPrice() + " EUR");
+                }
+            }
+        } else {
+            System.out.println("Alle verfügbaren Flächen:");
+            for (int i = 0; i < availableAreas.size(); i++) {
+                Messeflaeche area = availableAreas.get(i);
+                String info = area.isBookableByEducationalInstitution() ? " (kann auch von Bildungseinrichtungen gebucht werden)" : "";
+                System.out.println("Index " + i + ": Größe " + area.getSize() + "m², Preis " + area.getPrice() + " EUR" + info);
+            }
+        }
+
+
+        return availableAreas;
     }
 
     /**
