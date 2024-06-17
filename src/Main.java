@@ -110,8 +110,8 @@ public class Main {
                     break;
 
                 case 6:
-                    System.out.println("Anzahl der gebuchten Messeflächen: " + verwaltungssoftware.countFairgroundAreas(true));
-                    System.out.println("Gesamtanzahl der Messeflächen: " + verwaltungssoftware.countFairgroundAreas(false));
+                    System.out.println("Anzahl der gebuchten Messeflächen: " + verwaltungssoftware.countExhibitionAreas(true));
+                    System.out.println("Gesamtanzahl der Messeflächen: " + verwaltungssoftware.countExhibitionAreas(false));
                     break;
 
                 case 7:

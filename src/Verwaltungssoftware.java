@@ -5,12 +5,12 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * Manages the fairground areas, partners, and bookings.
+ * Manages the exhibition grounds areas, partners, and bookings.
  */
 public class Verwaltungssoftware {
-    private List<Messeflaeche> messeflaechen;
-    private List<Partner> partnerList;
-    private Map<String, PartnerType> partnerTypes;
+    private final List<Messeflaeche> messeflaechen;
+    private final List<Partner> partnerList;
+    private final Map<String, PartnerType> partnerTypes;
 
     /**
      * Constructor for Verwaltungssoftware.
@@ -22,8 +22,8 @@ public class Verwaltungssoftware {
     }
 
     /**
-     * Retrieves the list of fairground areas.
-     * @return the list of fairground areas
+     * Retrieves the list of exhibition grounds areas.
+     * @return the list of exhibition grounds areas
      */
     public List<Messeflaeche> getMesseflaechen() {
         return messeflaechen;
@@ -46,8 +46,8 @@ public class Verwaltungssoftware {
     }
 
     /**
-     * Adds a fairground area.
-     * @param messeflaeche the fairground area to add
+     * Adds exhibition grounds area.
+     * @param messeflaeche the exhibition grounds area to add
      */
     public void addMesseflaeche(Messeflaeche messeflaeche) {
         this.messeflaechen.add(messeflaeche);
@@ -71,8 +71,10 @@ public class Verwaltungssoftware {
     }
 
     /**
-     * Calculates the price for a given fairground area and partner.
-     * @param messeflaeche the fairground area
+     * Calculates the price for a given exhibition grounds
+ area and partner.
+     * @param messeflaeche the exhibition grounds
+ area
      * @param partner the partner
      * @return the calculated price
      */
@@ -84,8 +86,10 @@ public class Verwaltungssoftware {
     }
 
     /**
-     * Creates a booking for a given fairground area and partner.
-     * @param messeflaeche the fairground area
+     * Creates a booking for a given exhibition grounds
+ area and partner.
+     * @param messeflaeche the exhibition grounds
+ area
      * @param partner the partner
      */
     public void createBooking(Messeflaeche messeflaeche, Partner partner) {
@@ -99,9 +103,11 @@ public class Verwaltungssoftware {
 
 
     /**
-     * Retrieves all available fairground areas.
+     * Retrieves all available exhibition grounds
+ areas.
      * @param forEducationalInstitution true if only areas bookable by educational institutions are needed, false otherwise
-     * @return list of available fairground areas
+     * @return list of available exhibition grounds
+ areas
      */
     public List<Messeflaeche> getAvailableAreas(boolean forEducationalInstitution) {
         List<Messeflaeche> availableAreas = messeflaechen.stream()
@@ -136,11 +142,13 @@ public class Verwaltungssoftware {
     }
 
     /**
-     * Counts the number of fairground areas.
+     * Counts the number of exhibition grounds
+ areas.
      * @param booked true to count booked areas, false to count all areas
-     * @return the number of fairground areas
+     * @return the number of exhibition grounds
+ areas
      */
-    public int countFairgroundAreas(boolean booked) {
+    public int countExhibitionAreas(boolean booked) {
         if (booked) {
             return (int) messeflaechen.stream().filter(Messeflaeche::isBooked).count();
         } else {

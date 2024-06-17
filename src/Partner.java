@@ -1,7 +1,7 @@
 import java.util.List;
 
 /**
- * Represents a partner participating in the fair.
+ * Represents a partner participating in the exhibition.
  */
 class Partner {
     private String name;
