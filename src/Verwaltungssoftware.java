@@ -133,6 +133,7 @@ public class Verwaltungssoftware {
                 }
             }
         } else {
+            System.out.println("");
             System.out.println("Alle verfügbaren Flächen:");
             for (int i = 0; i < availableAreas.size(); i++) {
                 Messeflaeche area = availableAreas.get(i);
