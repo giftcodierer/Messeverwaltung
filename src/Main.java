@@ -10,6 +10,7 @@ public class Main {
     public static void main(String[] args) {
         Verwaltungssoftware verwaltungssoftware = new Verwaltungssoftware();
         Scanner scanner = new Scanner(System.in);
+        List<Messeflaeche> messeflaechen = null;
 
         // Beispiel Partner-Typen hinzufügen
         verwaltungssoftware.addPartnerType("Normal", 0);
@@ -65,7 +66,7 @@ public class Main {
 
                 case 3:
                     System.out.println("Messeflächen:");
-                    List<Messeflaeche> messeflaechen = verwaltungssoftware.getMesseflaechen();
+                    messeflaechen = verwaltungssoftware.getMesseflaechen();
                     for (int i = 0; i < messeflaechen.size(); i++) {
                         Messeflaeche messeflaeche = messeflaechen.get(i);
                         System.out.println("Index " + i + ": Größe " + messeflaeche.getSize() + "m², Preis " + messeflaeche.getPrice() + " EUR");
