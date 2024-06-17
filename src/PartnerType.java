@@ -1,3 +1,4 @@
+
 /**
  * Represents the type of a partner.
  */

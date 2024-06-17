@@ -1,3 +1,4 @@
+
 /**
  * Represents a fairground area.
  */
