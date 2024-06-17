@@ -89,10 +89,7 @@ public class Main {
                 case 4:
                     System.out.println("Messeflächen:");
                     List<Messeflaeche> availableAreas = verwaltungssoftware.getAvailableAreas(false);
-                    for (int i = 0; i < availableAreas.size(); i++) {
-                        Messeflaeche availableArea = availableAreas.get(i);
-                        System.out.println("Index " + i + ": Größe " + availableArea.getSize() + "m², Preis " + availableArea.getPrice() + " EUR");
-                    }
+
                     System.out.print("Index der Messefläche für die Buchung: ");
                     int indexToBook = scanner.nextInt();
                     System.out.println("Partner:");
@@ -109,7 +106,7 @@ public class Main {
                     break;
 
                 case 5:
-                    List<Messeflaeche> availableAreasForEdu = verwaltungssoftware.getAvailableAreas(false);
+                    verwaltungssoftware.getAvailableAreas(false);
                     break;
 
                 case 6:
