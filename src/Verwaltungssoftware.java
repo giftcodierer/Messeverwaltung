@@ -142,7 +142,6 @@ public class Verwaltungssoftware {
             }
         }
 
-
         return availableAreas;
     }
 
