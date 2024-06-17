@@ -97,16 +97,6 @@ public class Verwaltungssoftware {
         }
     }
 
-    /**
-     * Retrieves all available fairground areas.
-     * @param forEducationalInstitution true if only areas bookable by educational institutions are needed, false otherwise
-     * @return list of available fairground areas
-     */
-   /* public List<Messeflaeche> getAvailableAreas(boolean forEducationalInstitution) {
-        return messeflaechen.stream()
-                .filter(area -> !area.isBooked() && (!forEducationalInstitution || area.isBookableByEducationalInstitution()))
-                .collect(Collectors.toList());
-    }*/
 
     /**
      * Retrieves all available fairground areas.
